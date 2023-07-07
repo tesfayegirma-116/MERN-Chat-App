@@ -236,33 +236,35 @@ function App() {
           )}
         </div>
 
-        <footer
-          className="bg-white border-t border-gray-200 
-        shadow-lg"
-        >
-          <form onSubmit={handleSubmit}>
-            <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
-                <div className="flex justify-start lg:w-0 lg:flex-1">
-                  <input
-                    type="text"
-                    placeholder="Type a message..."
-                    className="border border-gray-100 rounded-lg py-2 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  />
-                </div>
+        {room ? (
+          <footer
+            className="bg-white border-t border-gray-200 
+                shadow-lg"
+          >
+            <form onSubmit={handleSubmit}>
+              <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+                  <div className="flex justify-start lg:w-0 lg:flex-1">
+                    <input
+                      type="text"
+                      placeholder="Type a message..."
+                      className="border border-gray-100 rounded-lg py-2 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                  </div>
 
-                <button
-                  type="submit"
-                  className="w-60 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-500 hover:bg-indigo-600"
-                >
-                  Send <span className="fa fa-paper-plane ml-2"></span>
-                </button>
+                  <button
+                    type="submit"
+                    className="w-60 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-500 hover:bg-indigo-600"
+                  >
+                    Send <span className="fa fa-paper-plane ml-2"></span>
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
-        </footer>
+            </form>
+          </footer>
+        ) : null}
       </div>
     </div>
   );
